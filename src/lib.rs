@@ -80,8 +80,8 @@ pub fn oneshot<T>() -> (OneSet<T>,OneGet<T>) {
 
 #[cfg(test)]
 mod tests {
-    /// #![feature(wait_until)]
-    use super::*;
+    use super::oneshot;
+    use std::thread;
     use std::time::Duration;
     
     #[test]
@@ -110,7 +110,7 @@ mod tests {
     fn test_drop_setter() {
         let (tx,rx) = oneshot::<u64>();
         let h = thread::spawn(move || {                
-            let tx = tx;
+            let _tx = tx;
         });
         thread::sleep(Duration::from_millis(500));
         assert_eq!(rx.wait(),None);
