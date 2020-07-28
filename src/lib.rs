@@ -35,7 +35,7 @@ impl<T> OneGet<T> {
     pub fn wait(self) -> Option<T> {
         self.0.wait()
     }
-    pub fn try(self) -> Result<Option<T>,OneGet<T>> {
+    pub fn try_get(self) -> Result<Option<T>,OneGet<T>> {
         match Arc::try_unwrap(self.0) {
             Ok(inner) => Ok(inner.wait()),
             Err(arc_inner) => Err(OneGet(arc_inner)),
