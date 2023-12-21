@@ -1,7 +1,19 @@
 [package]
-name = "oneshot"
-version = "0.2.0"
+name = "transmitter"
+version = "0.2.1"
 authors = ["merl <merl.001.mia@gmail.com>"]
-edition = "2018"
+edition = "2021"
+license = "MIT"
+readme = "README.md"
+description = "Sync channels"
+
+repository = "https://github.com/merl-twin/transmitter"
+homepage = "https://github.com/merl-twin/transmitter"
+
+include = [
+    "**/*.rs",
+    "Cargo.toml",
+]
+
 
 [dependencies]

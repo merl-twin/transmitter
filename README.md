@@ -1,0 +1,3 @@
+Transmitters:
+
+* oneshot: OneSet, OneGet
